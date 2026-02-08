@@ -11,7 +11,6 @@
     --par-light: #ebf4fc;
 }
 
-/* Dark theme applied to body when dark mode is active */
 body.dark-theme {
     --primary: #d1e8ff;
     --secondary: #c2d7ec;
@@ -23,6 +22,7 @@ body.dark-theme {
     --par-light: #1a3d63;
 }
 
+/**/
 * {
     margin: 0;
     padding: 0;
@@ -157,7 +157,6 @@ body.dark-theme {
     margin: auto;
 }
 
-/* Input text color for dark theme */
 body.dark-theme .inputW input,
 body.dark-theme .inputH input {
     color: var(--text-dark);
@@ -204,7 +203,6 @@ button:hover {
     text-align: center;
 }
 
-/* SVG */
 .fig {
     width: 140px;
     height: auto;
@@ -212,7 +210,6 @@ button:hover {
     transition: fill 0.4s ease, transform 0.4s ease;
 }
 
-/* Language Toggle Button */
 .lang-toggle-btn {
     background: transparent;
     border: none;
@@ -259,7 +256,6 @@ body.arabic .ar-lang {
     opacity: 1;
 }
 
-/* Theme Toggle Button */
 .theme-toggle-btn {
     background: transparent;
     border: none;
@@ -304,32 +300,40 @@ body.dark-theme .moon-icon {
     opacity: 1;
 }
 
-/* Arabic text styling - no layout changes */
 body.arabic {
-    /* Only change text for Arabic, no layout changes */
+    direction: rtl;
+}
+
+body.arabic .header h1,
+body.arabic .header h4 {
+    margin-left: 0;
+    margin-right: 15px;
 }
 
 @media (max-width: 767px) {
 
     .header h1,
-    h4 {
-        text-align: center;
-    }
-
     .header h4 {
-        margin: auto;
+        text-align: center;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     .container {
         flex-direction: column;
         align-items: center;
-        margin-right: 40px;
+        width: 100%;
+        margin: 15px auto;
+        padding: 0;
+        gap: 15px;
     }
 
     .input,
-    .result {
-        width: 100%;
-        min-height: 350px;
+    .result,
+    .paragraph {
+        width: 92%;
+        max-width: none;
+        margin: 10px auto !important;
     }
 
     .inputW input,
@@ -340,7 +344,7 @@ body.arabic {
 
     .buttons {
         flex-direction: column;
-        padding: 20px 20px 20px 20px;
+        padding: 20px;
     }
 
     button {
